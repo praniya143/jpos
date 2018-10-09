@@ -101,7 +101,13 @@
                             </span>
                         </a>
                     </div>
-
+                    <div>
+                        <a href="/logout" class="boxrmenu">
+                            <span>
+                                <small>Logout</small>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

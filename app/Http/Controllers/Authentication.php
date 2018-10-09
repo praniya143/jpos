@@ -16,4 +16,8 @@ class Authentication extends Controller
 			return redirect('/');
 		}
 	}
+	public function logout(Request $request){
+		Session::flush();
+		return redirect('/login');
+	}
 }

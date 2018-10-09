@@ -15,6 +15,8 @@ Route::get('/login', function () {
 	return view('login');
 });
 
+Route::get('/logout', 'Authentication@logout');
+
 Route::post('/authenticate', 'Authentication@doLogin');
 
 Route::group(['middleware' => ['authenticate']], function () {
