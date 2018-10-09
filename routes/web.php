@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/login', function () {
 	return view('login');
 });
@@ -20,8 +19,6 @@ Route::post('/authenticate', 'Authentication@doLogin');
 
 Route::group(['middleware' => ['authenticate']], function () {
 
-	Route::get('/', function () {
-		return Session::get('user');
-	});
+	Route::get('/', 'Home@index');
 
 });
