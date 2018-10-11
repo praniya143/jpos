@@ -22,7 +22,10 @@ Route::post('authenticate', 'Authentication@doLogin');
 Route::group(['middleware' => ['authenticate']], function () {
 
 	Route::get('/', 'Home@index');
-	Route::get('master', 'Home@master');
+	Route::group(['prefix' => 'master'],function(){
+		Route::get('', 'Home@master');
+		Route::get('operator', 'Master@operator');
+	});
 
 	Route::resource('billing', 'Billing');
 

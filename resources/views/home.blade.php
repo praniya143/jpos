@@ -1,3 +1,3 @@
-@include('header')	
+@extends('header')	
 @section('content')
 @stop
