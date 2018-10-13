@@ -15,18 +15,20 @@ Route::get('login', function () {
 	return view('login');
 });
 
-Route::get('logout', 'Authentication@logout');
+Route::get('logout', 'AuthenticationController@logout');
 
-Route::post('authenticate', 'Authentication@doLogin');
+Route::post('authenticate', 'AuthenticationController@doLogin');
 
 Route::group(['middleware' => ['authenticate']], function () {
 
-	Route::get('/', 'Home@index');
+	Route::get('/', 'HomeController@index');
 	Route::group(['prefix' => 'master'],function(){
-		Route::get('', 'Home@master');
-		Route::get('operator', 'Master@operator');
+		Route::get('', 'HomeController@master');
+		Route::resource('operator', 'OperatorController');
+		Route::resource('dealer', 'DealerController');
+
 	});
 
-	Route::resource('billing', 'Billing');
+	Route::resource('billing', 'BillingController');
 
 });

@@ -17,7 +17,7 @@
 	</a>
 </div>
 <div>
-	<a href="/" class="boxrmenu">
+	<a href="master/dealer" class="boxrmenu">
 	<span>
 		<img class="nohover" src="images/billingmicon.png" alt="" />
 		<img class="hover" src="images/billingpicon.png" alt="" />
